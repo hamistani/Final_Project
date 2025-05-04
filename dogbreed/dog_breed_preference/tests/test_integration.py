@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.core.management import call_command
 from dogbreed.dog_breed_preference.models import Breed, UserPreference
 
+#Tests full integration: page loads, breed match display, and data loading via management command
 class IntegrationTest(TestCase):
     def setUp(self):
         self.client = Client()

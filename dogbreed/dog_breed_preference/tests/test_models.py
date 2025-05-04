@@ -1,6 +1,7 @@
 from django.test import TestCase
 from dogbreed.dog_breed_preference.models import Breed
 
+#Tests the Breed model’s string representation and field assignments for correctness
 class BreedModelTest(TestCase):
     def test_str_method(self):
         breed = Breed.objects.create(
