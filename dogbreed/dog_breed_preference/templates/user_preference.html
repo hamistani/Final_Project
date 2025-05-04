@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}User Preferences{% endblock %}
+
+{% block content %}
+<h1>User Preferences</h1>
+<div class="table-container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+                <th>Breed Name Base on Breed ID</th>
+                <th>Preferred Breed</th>
+                <th>Affectionate with Family</th>
+                <th>Good with Young Children</th>
+                <th>Good with Other Dogs</th>
+                <th>Shedding Level</th>
+                <th>Coat Grooming Frequency</th>
+                <th>Drooling Level</th>
+                <th>Coat Type</th>
+                <th>Coat Length</th>
+                <th>Openness to Strangers</th>
+                <th>Playfulness Level</th>
+                <th>Watchdog & Protective Nature</th>
+                <th>Adaptability Level</th>
+                <th>Trainability Level</th>
+                <th>Energy Level</th>
+                <th>Barking Level</th>
+                <th>Mental Stimulation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for preference in preferences %}
+            <tr>
+                <td>{{ preference.first_name }}</td>
+                <td>{{ preference.last_name }}</td>
+                <td>{{ preference.username }}</td>
+                <td>{{ preference.breed_id.breed_name }}</td>
+                <td>{{ preference.affectionate_with_family }}</td>
+                <td>{{ preference.good_with_young_children }}</td>
+                <td>{{ preference.good_with_other_dogs }}</td>
+                <td>{{ preference.shedding_level }}</td>
+                <td>{{ preference.coat_grooming_frequency }}</td>
+                <td>{{ preference.drooling_level }}</td>
+                <td>{{ preference.coat_type }}</td>
+                <td>{{ preference.coat_length }}</td>
+                <td>{{ preference.openness_to_strangers }}</td>
+                <td>{{ preference.playfullness_level }}</td>
+                <td>{{ preference.watchdog_protective_nature }}</td>
+                <td>{{ preference.adaptability_level }}</td>
+                <td>{{ preference.trainability_level }}</td>
+                <td>{{ preference.energy_level }}</td>
+                <td>{{ preference.barking_level }}</td>
+                <td>{{ preference.mental_stimulation }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

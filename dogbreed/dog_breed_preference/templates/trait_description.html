@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Trait Descriptions{% endblock %}
+
+{% block content %}
+<h1>Trait Descriptions</h1>
+<div class="table-container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Trait ID</th>
+                <th>Trait</th>
+                <th>Trait Level 1</th>
+                <th>Trait Level 5</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for description in descriptions %}
+            <tr>
+                <td>{{ description.trait_id }}</td>
+                <td>{{ description.trait }}</td>
+                <td>{{ description.trait_1 }}</td>
+                <td>{{ description.trait_5 }}</td>
+                <td>{{ description.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

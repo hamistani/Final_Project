@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Dog Breeds{% endblock %}
+
+{% block content %}
+<h1>List of Dog Breeds</h1>
+<div class="table-container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Breed ID</th>
+                <th>Breed Name</th>
+                <th>Links</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for breed in breeds %}
+            <tr>
+                <td>{{ breed.breed_id }}</td>
+                <td>{{ breed.breed_name }}</td>
+                <td><a href="{{ breed.links }}" target="_blank">Visit</a></td>
+                <td>
+                    {% if breed.image_url %}
+                    <img src="{{ breed.image_url }}" alt="{{ breed.breed_name }}" style="width: 100px; height: auto;">
+                    {% else %}
+                    No image available
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

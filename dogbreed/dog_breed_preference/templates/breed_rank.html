@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Breed Rankings{% endblock %}
+
+{% block content %}
+<h1>Breed Rankings</h1>
+<div class="table-container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Breed Name Based on ID</th>
+                <th>Rank (2013)</th>
+                <th>Rank (2014)</th>
+                <th>Rank (2015)</th>
+                <th>Rank (2016)</th>
+                <th>Rank (2017)</th>
+                <th>Rank (2018)</th>
+                <th>Rank (2019)</th>
+                <th>Rank (2020)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rank in ranks %}
+            <tr>
+                <td>{{ rank.breed_name.breed_id }} - {{ rank.breed_name.breed_name }}</td>
+                <td>{{ rank.rank_2013 }}</td>
+                <td>{{ rank.rank_2014 }}</td>
+                <td>{{ rank.rank_2015 }}</td>
+                <td>{{ rank.rank_2016 }}</td>
+                <td>{{ rank.rank_2017 }}</td>
+                <td>{{ rank.rank_2018 }}</td>
+                <td>{{ rank.rank_2019 }}</td>
+                <td>{{ rank.rank_2020 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

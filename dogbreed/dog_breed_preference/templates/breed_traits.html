@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Breed Traits{% endblock %}
+
+{% block content %}
+<h1>Breed Traits</h1>
+<div class="table-container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Breed Name</th>
+                <th>Affectionate with Family</th>
+                <th>Good with Young Children</th>
+                <th>Good with Other Dogs</th>
+                <th>Shedding Level</th>
+                <th>Coat Grooming Frequency</th>
+                <th>Drooling Level</th>
+                <th>Coat Type</th>
+                <th>Coat Length</th>
+                <th>Openness to Strangers</th>
+                <th>Playfulness Level</th>
+                <th>Watchdog & Protective Nature</th>
+                <th>Adaptability Level</th>
+                <th>Trainability Level</th>
+                <th>Energy Level</th>
+                <th>Barking Level</th>
+                <th>Mental Stimulation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trait in traits %}
+            <tr>
+                <td>{{ trait.breed_name.breed_name }}</td>
+                <td>{{ trait.affectionate_with_family }}</td>
+                <td>{{ trait.good_with_young_children }}</td>
+                <td>{{ trait.good_with_other_dogs }}</td>
+                <td>{{ trait.shedding_level }}</td>
+                <td>{{ trait.coat_grooming_frequency }}</td>
+                <td>{{ trait.drooling_level }}</td>
+                <td>{{ trait.coat_type }}</td>
+                <td>{{ trait.coat_length }}</td>
+                <td>{{ trait.openness_to_strangers }}</td>
+                <td>{{ trait.playfullness_level }}</td>
+                <td>{{ trait.watchdog_protective_nature }}</td>
+                <td>{{ trait.adaptability_level }}</td>
+                <td>{{ trait.trainability_level }}</td>
+                <td>{{ trait.energy_level }}</td>
+                <td>{{ trait.barking_level }}</td>
+                <td>{{ trait.mental_stimulation }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
